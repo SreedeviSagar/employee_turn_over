@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+   
+<body>
+    <div style="color:rgb(0, 0, 0)">
+       <h1 style="margin-top: 10px;margin-bottom: 10px;font-size: 150px;">EMPLOYEE TURN OVER PREDICTION</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">Satisfaction level</h4>
+            <input name="satisfaction_level" id="first"
+                placeholder="Enter satisfaction level">
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">Last evaluation</h4>
+            <input name="last_evaluation" id="first"
+                placeholder="Enter last evaluation">
+        
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;"> Number of projects</h4>
+            <input type="number" name="number_project" id="first"
+                placeholder="Enter number of projects">
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">Average monthly hours</h4>
+            <input type="number" name="average_montly_hours" id="first"
+                placeholder="Enter average monthly hours" min='96' max='310'>
+        
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">Time spend in company</h4>
+            <input type="number" name="time_spend_company" id="first"
+                placeholder="Enter time spend in company" min='2' max='10'>
+        
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">work accident</h4>
+            <input type="number" name="Work_accident" id="first"
+                placeholder="Enter working accident" min='0' max='1'>
+        
+        
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">Promotion last 5years</h4>
+            <input  type="number" name="promotion_last_5years"id="first"
+                placeholder="Enter promotion last 5years" min='0' max='1'>
+        
+
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">Departments</h4>
+            <select name="Departments "  id="first" placeholder="Enter department" required> 
+                <option class="placeholder" selected disabled value="">Select department</option>
+                <option value="sales">
+                    Sales
+                </option>
+                <option value="accounting">
+                    accounting
+                </option>
+                <option value="hr">
+                    hr
+                </option>
+                <option value="technical">
+                    technical
+                </option>
+                <option value="support">
+                    support
+                </option>
+                <option value="management">
+                    management
+                </option>
+                <option value="IT">
+                    IT
+                </option>
+                <option value="product_mng">
+                    product management
+                </option>
+                <option value="marketing">
+                    marketing
+                </option>
+                <option value="RandD">
+                    RandD
+                </option>
+
+            </select>
+       
+        <h4 style="margin-top: 0px;margin-bottom: 0px;">salary </h4>
+            <select name="salary" id ="first" placeholder="Enter salary" required>
+                <option class="placeholder" selected disabled value="">Select salary</option>
+                <option value="low">
+                    low
+                </option>
+                <option value="medium">
+                    medium
+                </option>
+                <option value="high">
+                    high
+                </option>
+        
+            </select>
+        
+        <br><button id="sub" style="height:60px;" type="submit ">Predict</button>
+    </form>
+    <h3 style="margin-top:10px;margin-bottom:10px;">{{prediction_text}}</h3>
+    </div>
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+            font-size: 100px
+            
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 800px;
+            bottom: 9%;
+            height: 800px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #sub {
+            width: 200px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 40px;
+            margin-top: 10px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            width:600px;
+            border-radius: 10px;
+            height: 82px;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        </style>
+</body>
+</html>
