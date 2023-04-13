@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# EMPLOYEE-TURN-OVER-PREDICTION
-=======
 # EMPLOYEE TURN OVER PREDICTION
 
 #### Employee Turnover or Employee Turnover ratio is the measurement of the total number of employees who leave an organization in a particular year. Employee Turnover Prediction means to predict whether an employee is going to leave the organization in the coming period.
@@ -21,4 +18,3 @@
     
 ![demo12](https://user-images.githubusercontent.com/115715763/227861347-b8117955-46ae-48ca-8d04-fae1101b4609.png)
 
->>>>>>> 825c00bc31b8d9a6789faea123ffa274187f4a6a
