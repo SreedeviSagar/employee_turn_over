@@ -34,17 +34,13 @@ class ModelTrainer:
         try:
             logging.info('Split training and test input data')
             X_train,y_train,X_test,y_test=(train_array[:,:-1],train_array[:,-1],test_array[:,:-1],test_array[:,-1])
-            models = {'support vector classifier' : SVC(kernel='rbf'),
-                      'KNeighbors classifier' : KNeighborsClassifier(), 
-                     #'MultinomialNB': MultinomialNB(), 
-                      'Decision Tree': DecisionTreeClassifier(),
-                      'Logistic regression': LogisticRegression(), 
-                      'Random Forest': RandomForestClassifier(), 
-                      'AdaBoost': AdaBoostClassifier(),
-                      'Bagging classifier':BaggingClassifier(), 
-                      'Extra trees classifier': ExtraTreesClassifier(),
-                      'Gradient boosting':GradientBoostingClassifier(),
-                      'xgb classifier':XGBClassifier()
+            models = {'Logistic regression': LogisticRegression(),
+                      'Decision Tree': DecisionTreeClassifier(criterion='entropy',max_depth=20, max_features=None, splitter='best'), 
+                      'Random Forest': RandomForestClassifier(bootstrap=False,criterion='gini',max_depth=30,max_features='sqrt',n_estimators=100), 
+                      'support vector classifier' : SVC(kernel='rbf'),
+                      'K-Neighbors classifier' : KNeighborsClassifier(n_neighbors=3), 
+                      'AdaBoost': AdaBoostClassifier(learning_rate=0.5,n_estimators=400),
+                      'XGB classifier':XGBClassifier(learning_rate=0.2,max_depth=10,min_child_weight=1.0,n_estimators=100,subsample=1.0)
                       }
             
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,

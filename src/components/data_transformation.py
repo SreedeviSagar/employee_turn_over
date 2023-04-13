@@ -77,7 +77,7 @@ class DataTransformation:
 
             logging.info('Oversampling started')
 
-            os=RandomOverSampler(sampling_strategy='minority',random_state=42)
+            os=RandomOverSampler(random_state=42)
             input_feature_train_arr,target_feature_train_df=os.fit_resample(input_feature_train_arr,target_feature_train_df)
             #input_feature_test_arr,target_feature_test_df=os.fit_resample(input_feature_test_arr,target_feature_test_df)
 
